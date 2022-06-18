@@ -1,0 +1,240 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  margin: 1.75em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body {
+  margin: 0;
+  background: url(images/bg-intro-mobile.png) no-repeat;
+  background-color: #ff7978;
+}
+
+body,
+button,
+input {
+  color: #fff;
+  font: 400 16px/24px "Poppins", sans-serif;
+}
+
+h1 {
+  margin: 2.62em 0 0.25em 0;
+  line-height: 1.4em;
+}
+
+h3 {
+  margin-bottom: 4em;
+  line-height: 1.75em;
+  font-weight: 500;
+}
+
+h1, h3, p {
+  text-align: center;
+}
+
+fieldset {
+  border: 0;
+}
+
+.cta-btn {
+  margin: 1.5em auto;
+  padding: 1.25em 2em;
+  line-height: 1.75em;
+  font-size: 1.2rem;
+  background: #6055a5;
+  -webkit-box-shadow: 0 0.5em 0 rgba(28, 28, 28, 0.25);
+          box-shadow: 0 0.5em 0 rgba(28, 28, 28, 0.25);
+}
+
+.cta-btn-alt {
+  background: #38cc8c;
+  padding: 1.25em 1em;
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cta-btn,
+.cta-btn-alt {
+  width: 100%;
+  border: 0;
+  border-radius: 0.35em;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.cta-btn-alt:hover {
+  -webkit-box-shadow: inset 0 -0.2em 0 rgba(46, 46, 46, 0.25);
+          box-shadow: inset 0 -0.2em 0 rgba(46, 46, 46, 0.25);
+}
+
+.trial {
+  font-weight: bold;
+}
+
+.reg-form {
+  width: 100%;
+  margin: 0 auto 3em;
+  border-radius: 0.75em;
+  background-color: white;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0.5em 0 rgba(28, 28, 28, 0.25);
+          box-shadow: 0 0.5em 0 rgba(28, 28, 28, 0.25);
+}
+
+.input-field,
+.action-field {
+  margin-bottom: 0.5em;
+  padding: 1.5em 1.5em 0 1.5em;
+}
+
+.input-field input {
+  margin: 0.25em 0 1em 0;
+  padding: 1.2em;
+  width: 100%;
+  height: 4em;
+  color: #404040;
+  background: #fff;
+  border: 1px solid #bbb5b5;
+  border-radius: 0.35em;
+}
+
+.input-field input:invalid {
+  border: 2px solid #ff7a7a;
+}
+
+.input-field input:valid {
+  border: 1px solid #bbb5b5;
+}
+
+input[placeholder] {
+  font-weight: 700;
+}
+
+.action-field {
+  padding: 0 1.5em 0 1.5em;
+}
+
+.action-field p {
+  margin-bottom: 3em;
+  padding: 0 0.5em;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #919191;
+}
+
+.action-field .emph {
+  color: #404040;
+  font-weight: 700;
+}
+
+.input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input-container .hide {
+  display: none;
+}
+
+.errmsg {
+  color: #ff7978;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: right;
+  margin: -1em 0 1em 0;
+  font-style: italic;
+}
+
+.errsvg {
+  position: absolute;
+  top: 1.1em;
+  right: 1.75em;
+}
+
+@media only screen and (min-width: 376px) {
+  body {
+    background: url(images/bg-intro-desktop.png) no-repeat;
+    background-color: #ff7978;
+  }
+  .container {
+    margin: 4.5em;
+    padding: 0 4em;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  h1 {
+    margin-bottom: 0.75em;
+    font-size: 3em;
+    text-align: left;
+    line-height: 1.1em;
+  }
+  h3 {
+    font-size: 1em;
+    text-align: left;
+  }
+  .cta-btn {
+    margin: 3.15em auto 1.5em;
+    padding: 1em 2em;
+    font-size: 1em;
+  }
+  .cta-btn-alt {
+    height: 3.25em;
+    padding: 0;
+  }
+  .input-field,
+  .action-field {
+    margin-bottom: 0.5em;
+    padding: 2.5em 2.5em 0 2.5em;
+  }
+  .input-field input {
+    padding: 0.5em;
+    height: 3.25em;
+  }
+  input[placeholder] {
+    font-weight: 600;
+  }
+  .action-field {
+    padding: 0 2.5em 0 2.5em;
+  }
+}
+/*# sourceMappingURL=main.css.map */

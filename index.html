@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsiveness &amp; Media Queries</title>
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Learn to Code by watching others</h1>
+            <h3>See how experienced Developers solve problems in real-time. Watching scripted tutorials is great, but understanding how Developers think is invaluable.</h3>
+        </div>
+
+        <div>
+            <button class="cta-btn"><span class="trial">Try it free 7 days</span> then $20/mo, thereafter</button>
+
+            <form class="reg-form" action="#" method="post" onsubmit="return check()" novalidate>
+                <fieldset class="input-field">
+                    <div class="input-container">
+                        <input type="text" placeholder="First Name" name="fname" id="fname" required>
+                        <svg class="hide" id="errSvg1" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                                <circle fill="#FF7979" cx="12" cy="12" r="12"/>
+                                <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/>
+                                <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        <div id="errName" class="errmsg"></div>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="text" placeholder="Last Name" name="fname" id="lname" required>
+                        <svg class="hide" id="errSvg2" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                                <circle fill="#FF7979" cx="12" cy="12" r="12"/>
+                                <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/>
+                                <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        <div id="errlName" class="errmsg"></div>
+                    </div>
+                   
+                    <div class="input-container">
+                        <input type="email" placeholder="Email Address" name="email" id="email" required>
+                        <svg class="hide" id="errSvg3" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                                <circle fill="#FF7979" cx="12" cy="12" r="12"/>
+                                <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/>
+                                <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        <div id="errMail" class="errmsg"></div>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="password" name="password" id="password" placeholder="Password" required>
+                        <svg class="hide" id="errSvg4" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                                <circle fill="#FF7979" cx="12" cy="12" r="12"/>
+                                <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/>
+                                <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        <div id="errPass" class="errmsg"></div>
+                    </div>
+                    
+                </fieldset>
+
+                <fieldset class="action-field">
+                    <input class="cta-btn-alt" type="submit" value="Claim Your Free Trial">
+                    <p>By clicking the Button, you are agreeing to our <span class="emph">Terms and Services.</span></p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+
+<!-- FORM VALIDATION -->
+<script>
+    function check () {
+      //INITIATE
+      var valid = true, error = "", field = "";
+    
+      // FIRST NAME
+      field = document.getElementById("fname");
+      error = document.getElementById("errName");
+      if (!field.checkValidity()) {
+        valid = false;
+        field.classList.add("err");
+        error.innerHTML = "First Name cannot be empty\r\n";
+      } else {
+        field.classList.remove("err");
+        error.innerHTML = "";
+      }
+
+      // FIRST NAME SVG
+      field = document.getElementById("fname");
+      error = document.getElementById("errSvg1");
+      if (!field.checkValidity()) {
+        valid = false;
+        field.classList.add("err");
+        error.classList.add("errsvg");
+        error.classList.remove("hide");
+      } else {
+        field.classList.remove("err");
+        error.classList.add("hide");
+      }
+
+      // LAST NAME
+      field = document.getElementById("lname");
+      error = document.getElementById("errlName");
+      if (!field.checkValidity()) {
+        valid = false;
+        field.classList.add("err");
+        error.innerHTML = "Last Name cannot be empty\r\n";
+      } else {
+        field.classList.remove("err");
+        error.innerHTML = "";
+      }
+
+      // LAST NAME SVG
+      field = document.getElementById("lname");
+      error = document.getElementById("errSvg2");
+      if (!field.checkValidity()) {
+        valid = false;
+        field.classList.add("err");
+        error.classList.add("errsvg");
+        error.classList.remove("hide");
+      } else {
+        field.classList.remove("err");
+        error.classList.add("hide");
+      }
+
+      // EMAIL ADDRESS
+      field = document.getElementById("email");
+      error = document.getElementById("errMail");
+      if (!field.checkValidity()) {
+        valid = false;
+        field.classList.add("err");
+        error.innerHTML = "Looks like this is not an email\r\n";
+      } else {
+        field.classList.remove("err");
+        error.innerHTML = "";
+      }
+
+      // EMAIL ADDRESS SVG
+      field = document.getElementById("email");
+      error = document.getElementById("errSvg3");
+      if (!field.checkValidity()) {
+        valid = false;
+        field.classList.add("err");
+        error.classList.add("errsvg");
+        error.classList.remove("hide");
+      } else {
+        field.classList.remove("err");
+        error.classList.add("hide");
+      }
+    
+    
+      // PASSWORD
+      field = document.getElementById("password");
+      error = document.getElementById("errPass");
+      if (!field.checkValidity()) {
+        valid = false;
+        field.classList.add("err");
+        error.innerHTML = "Password cannot be empty\r\n";
+      } else {
+        field.classList.remove("err");
+        error.innerHTML = "";
+      }
+
+      // PASSWORD SVG
+      field = document.getElementById("password");
+      error = document.getElementById("errSvg4");
+      if (!field.checkValidity()) {
+        valid = false;
+        field.classList.add("err");
+        error.classList.add("errsvg");
+        error.classList.remove("hide");
+      } else {
+        field.classList.remove("err");
+        error.classList.add("hide");
+      }
+    
+      // END RESULT
+      return valid;
+    }
+    </script>
+
+</html>
