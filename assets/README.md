@@ -1,4 +1,4 @@
-A single-page responsive registration form using the design
+A single-page responsive Registration Form
 
 Environment
-Github Pages
+Github Pages: https://iamjacobjoshua.github.io/responsive-web/
