@@ -1,4 +1,4 @@
-# A single-page responsive Registration Form
+# A Single-Page Responsive Registration Form
 
 ### Responsive Web
 This repository contains the reponsive web design files
